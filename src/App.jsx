@@ -5,6 +5,7 @@ import HeroSection from "./Components/HeroSection"
 import AboutUs from './Components/Aboutus'
 import WhyChoose from './Components/WhyChoose'
 import '@fortawesome/fontawesome-free/css/all.min.css'
+import Assurance from './Components/Assurance'
 function App() {
 
 
@@ -15,6 +16,7 @@ function App() {
       <HeroSection />
       <AboutUs />
       <WhyChoose />
+      <Assurance />
     </>
   )
 }
