@@ -1,0 +1,176 @@
+/* ═══════════════════════════════════════════
+   AboutUs – TakeMyAssignment.co.uk
+   Slide-from-left + fade-in on scroll entry
+═══════════════════════════════════════════ */
+
+.au-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+/* ── Pink-to-red gradient background (matches screenshot) ── */
+.au-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg,
+            #fff5f5 0%,
+            #ffe0e0 35%,
+            #ff6b6b 75%,
+            #e53935 100%);
+    z-index: 0;
+}
+
+/* ── Two-column layout ── */
+.au-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 60px 40px 40px;
+}
+
+/* ════ LEFT TEXT COLUMN ════ */
+.au-text-col {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.au-label {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.au-title {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.au-red {
+    color: #e53935;
+}
+
+.au-subtitle {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 24px 0 6px;
+}
+
+.au-body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 13.5px;
+    font-weight: 400;
+    color: #1a1a1a;
+    line-height: 1.75;
+    text-align: justify;
+}
+
+.au-list {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 13.5px;
+    color: #1a1a1a;
+    line-height: 1.85;
+}
+
+.au-list p {
+    margin: 0;
+}
+
+/* ════ RIGHT IMAGE COLUMN ════ */
+.au-img-col {
+    flex: 0 0 46%;
+    max-width: 46%;
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+}
+
+.au-photo {
+    width: 100%;
+    height: 680px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+}
+
+/* ════ RED BOTTOM BANNER ════ */
+.au-banner {
+    position: relative;
+    z-index: 1;
+    background: #e53935;
+    padding: 40px 24px;
+    text-align: center;
+}
+
+.au-banner-text {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: clamp(22px, 3.5vw, 36px);
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* ═══════════════════════════════════════════
+   ANIMATION — slide from left + fade in
+   Default: hidden (translated left, transparent, small)
+   .au-animate--in: visible (normal position, full opacity, normal size)
+═══════════════════════════════════════════ */
+.au-animate {
+    opacity: 0;
+    transform: translateX(-60px) scale(0.97);
+    font-size-adjust: 0.4;
+    transition:
+        opacity 0.65s ease,
+        transform 0.65s ease;
+}
+
+/* Image slides from right instead */
+.au-animate--img {
+    transform: translateX(60px) scale(0.97);
+}
+
+/* Banner fades up */
+.au-banner.au-animate {
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* Triggered state */
+.au-animate--in {
+    opacity: 1 !important;
+    transform: translate(0, 0) scale(1) !important;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .au-container {
+        flex-direction: column;
+        padding: 40px 20px 30px;
+    }
+
+    .au-text-col,
+    .au-img-col {
+        flex: 0 0 100%;
+        max-width: 100%;
+        position: static;
+    }
+
+    .au-photo {
+        height: 320px;
+    }
+}

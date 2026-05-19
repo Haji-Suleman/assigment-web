@@ -1,6 +1,6 @@
 import React from 'react'
 import callLogo from "../assets/10002.svg"       // replace with your call icon
-import siteLogo from "../assets/10009.jpg"       // replace with your centre logo
+import siteLogo from "../assets/10011.png"       // replace with your centre logo
 import facebookIcon from "../assets/10001.svg"   // replace with your FB icon
 import whatsappIcon from "../assets/10001.svg"   // replace with your WA icon
 import instagramIcon from "../assets/10001.svg" // replace with your IG icon
@@ -8,7 +8,7 @@ import "./Navbar.css"
 
 const Navbar = () => {
     return (
-            <>
+        <>
             <header className="navbar">
 
                 {/* ── LEFT: phone button ── */}
