@@ -1,0 +1,174 @@
+/* ═══════════════════════════════════════
+   KeyQualities Section
+═══════════════════════════════════════ */
+
+.kq-section {
+    width: 100%;
+    background: #ffffff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    overflow: hidden;
+}
+
+.kq-container {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    /* image = 40%, text = 60% — fixed */
+    align-items: center;
+    gap: 0 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 40px;
+    box-sizing: border-box;
+}
+
+/* ══════════════════════════════
+   LEFT — Image
+══════════════════════════════ */
+.kq-image-wrap {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+
+    /* Entry: slide in from left */
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.kq-image-wrap.kq--in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.kq-image-wrap img {
+    width: 100%;
+    height: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+}
+
+/* ══════════════════════════════
+   RIGHT — Content
+══════════════════════════════ */
+.kq-content {
+    width: 100%;
+
+    /* Entry: slide in from right */
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.18s,
+        transform 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.18s;
+}
+
+.kq-content.kq--in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ── Title ── */
+.kq-title {
+    font-size: clamp(24px, 2.8vw, 40px);
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 0 0 28px;
+    line-height: 1.2;
+}
+
+/* ── List ── */
+.kq-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.kq-list li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 15.5px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.kq-list li i {
+    font-size: 15px;
+    color: #2ecc71;
+    flex-shrink: 0;
+    width: 18px;
+    text-align: center;
+}
+
+/* ── Button ── */
+.kq-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #2ecc71;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 14px 34px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease,
+        transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.3s ease;
+}
+
+.kq-btn:hover {
+    background: #27ae60;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(46, 204, 113, 0.38);
+}
+
+.kq-btn i {
+    font-size: 18px;
+}
+
+/* ══════════════════════════════
+   RESPONSIVE
+══════════════════════════════ */
+@media (max-width: 900px) {
+    .kq-container {
+        grid-template-columns: 1fr;
+        /* stack vertically */
+        gap: 36px 0;
+        padding: 50px 24px;
+    }
+
+    .kq-image-wrap img {
+        max-height: 320px;
+    }
+
+    /* reset to vertical animation on mobile */
+    .kq-image-wrap {
+        transform: translateY(-60px);
+    }
+
+    .kq-content {
+        transform: translateY(60px);
+    }
+}
+
+@media (max-width: 540px) {
+    .kq-title {
+        font-size: 22px;
+    }
+
+    .kq-list li {
+        font-size: 14px;
+    }
+
+    .kq-btn {
+        font-size: 15px;
+        padding: 12px 26px;
+    }
+}

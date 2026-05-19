@@ -1,0 +1,215 @@
+/* ═══════════════════════════════════════
+   Accordion Section
+═══════════════════════════════════════ */
+
+.ac-section {
+    width: 100%;
+    background: #ffffff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    padding: 70px 40px;
+    box-sizing: border-box;
+}
+
+
+/* ── Single accordion item ── */
+.ac-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 40px;
+    align-items: start;
+    /* ← columns start at top, don't stretch each other */
+}
+
+.ac-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ── Responsive ── */
+.ac-item {
+    border: 1px solid black;
+}
+
+.ac-item:hover {
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.09);
+    transform: translateY(-2px);
+}
+
+/* ── Header (clickable row) ── */
+.ac-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    cursor: pointer;
+    background: #ffffff;
+    transition: background 0.25s ease;
+    user-select: none;
+    gap: 12px;
+}
+
+.ac-item.ac-open .ac-header {
+    background: #e53935;
+}
+
+.ac-header-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+    transition: color 0.25s ease;
+}
+
+.ac-item.ac-open .ac-header-title {
+    color: #ffffff;
+}
+
+/* ── +/− icon ── */
+.ac-icon {
+    font-size: 22px;
+    font-weight: 300;
+    color: #1a1a1a;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: color 0.25s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ac-item.ac-open .ac-icon {
+    color: #ffffff;
+    transform: rotate(45deg);
+}
+
+/* ── Body (collapsible) ── */
+.ac-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        padding 0.3s ease;
+}
+
+.ac-item.ac-open .ac-body {
+    max-height: 400px;
+}
+
+.ac-body-inner {
+    padding: 20px 24px 26px;
+    font-size: 15px;
+    color: #444;
+    line-height: 1.75;
+    border-top: 1px solid #ececec;
+}
+
+/* ═══════════════════════════════════════
+   Stats Banner
+═══════════════════════════════════════ */
+
+.ac-stats {
+    width: 100%;
+    background: linear-gradient(135deg, #e53935 0%, #ef5350 50%, #e57373 100%);
+    padding: 50px 40px;
+    box-sizing: border-box;
+    margin-top: 0;
+}
+
+.ac-stats-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.ac-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    /* entry animation */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ac-stat-item.ac-stat--in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* stagger each item */
+.ac-stat-item:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.ac-stat-item:nth-child(2) {
+    transition-delay: 0.12s;
+}
+
+.ac-stat-item:nth-child(3) {
+    transition-delay: 0.24s;
+}
+
+.ac-stat-item:nth-child(4) {
+    transition-delay: 0.36s;
+}
+
+.ac-stat-number {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 750;
+    color: #ffffff;
+    line-height: 1;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+.ac-stat-label {
+    font-size: clamp(13px, 1.4vw, 16px);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.88);
+    margin: 0;
+    letter-spacing: 0.3px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+    .ac-stats {
+        padding: 40px 20px;
+    }
+
+    .ac-stats-inner {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 36px 20px;
+    }
+}
+
+@media (max-width: 380px) {
+    .ac-stats-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+}
+
+/* ══════════════════════════════
+   RESPONSIVE
+══════════════════════════════ */
+@media (max-width: 860px) {
+    .ac-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .ac-section {
+        padding: 50px 20px;
+    }
+
+    .ac-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}

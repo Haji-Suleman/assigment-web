@@ -6,6 +6,8 @@ import AboutUs from './Components/Aboutus'
 import WhyChoose from './Components/WhyChoose'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import Assurance from './Components/Assurance'
+import KeyQualities from './Components/KeyQualities'
+import Accordion from './Components/Accordion'
 function App() {
 
 
@@ -17,6 +19,8 @@ function App() {
       <AboutUs />
       <WhyChoose />
       <Assurance />
+      <KeyQualities />
+      <Accordion />
     </>
   )
 }
