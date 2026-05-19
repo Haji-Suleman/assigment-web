@@ -118,16 +118,23 @@
 .wc-bottom-banner {
     width: 100%;
     background: #e53935;
-    padding: 36px 24px;
+    padding: 25px 24px;
     text-align: center;
 }
 
 .wc-banner-text {
-    font-size: clamp(16px, 2.4vw, 26px);
-    font-weight: 800;
-    font-style: italic;
+    font-size: clamp(45px, 2.4vw, 26px);
+    font-weight: 700;
     color: #ffffff;
     margin: 0;
+}
+
+.row_container {
+    padding: 10px 10px 90px 10px;
+    border-radius: 30px;
+    border: 1px solid black;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1) !important;
+
 }
 
 /* ── Responsive ── */

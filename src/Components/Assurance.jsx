@@ -54,14 +54,19 @@ const Assurance = () => {
         <section className="as-section">
             <div className="as-row" ref={rowRef}>
                 {cards.map((card, i) => (
-                    <div className={`as-card as-card--${card.anim}`} key={i}>
-                        <div className="as-icon-circle">
-                            <i className={card.icon}></i>
+                    <div className="row_container" key={i}>
+                        <div className={`as-card as-card--${card.anim}`}>
+                            <div className="as-icon-circle">
+                                <i className={card.icon}></i>
+                            </div>
+                            <h3 className="as-title">{card.title}</h3>
+                            <p className="as-desc">{card.desc}</p>
                         </div>
-                        <h3 className="as-title">{card.title}</h3>
-                        <p className="as-desc">{card.desc}</p>
                     </div>
                 ))}
+            </div>
+            <div className="wc-bottom-banner">
+                <h2 className="wc-banner-text">Qualities that our experts possess</h2>
             </div>
         </section>
     )
