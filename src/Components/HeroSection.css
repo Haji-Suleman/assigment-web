@@ -1,0 +1,70 @@
+/* ── Hero wrapper ── */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 480px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* ── Blue-grey tint overlay ── */
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+/* ── Left floating icon column ── */
+.hero__side-icons {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.hero__side-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: #25d366;
+    border-radius: 0 8px 8px 0;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+/* hover → slide right 10px */
+.hero__side-btn:hover {
+    transform: translateX(10px);
+    transform: 3;
+}
+
+
+
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+    .hero {
+        min-height: 320px;
+    }
+
+    .hero__side-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .hero__side-btn img {
+        width: 18px;
+        height: 18px;
+    }
+}

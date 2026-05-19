@@ -1,0 +1,154 @@
+/* ────────────────────────────────────────────
+   Navbar  –  TakeMyAssignment.co.uk
+   Layout: phone | logo | socials
+──────────────────────────────────────────── */
+
+/* Reset & base */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── Shell ── */
+header {
+    margin-top: 5px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 60px;
+    /* matches the screenshot height */
+    padding: 0 10px;
+
+    background: #ffffff;
+    border-bottom: 1px solid #e8e8e8;
+
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* ── Phone button (left) ── */
+.navbar__phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background: #d32f2f;
+    /* red pill */
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+
+    padding: 5px 18px;
+    border-radius: 4px;
+
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.navbar__phone:hover {
+    background: #b71c1c;
+    transform: translateY(-1px);
+}
+
+.navbar__phone-icon {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+    /* forces icon white */
+    flex-shrink: 0;
+}
+
+/* ── Brand logo (centre) ── */
+.navbar__brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    /* Push logo to true centre when socials width differs from phone width */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navbar__logo {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* ── Social icons (right) ── */
+.navbar__socials {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navbar__social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+
+    background: #d32f2f;
+    /* same red as phone button */
+    text-decoration: none;
+
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.navbar__social-btn:hover {
+    background: #b71c1c;
+}
+
+.navbar__social-btn img {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+    /* forces icons white */
+}
+
+/* ── Responsive: shrink on small screens ── */
+@media (max-width: 600px) {
+    .navbar {
+        padding: 0 12px;
+        height: 56px;
+    }
+
+    .navbar__phone span {
+        display: none;
+        /* show icon only on mobile */
+    }
+
+    .navbar__phone {
+        padding: 10px 12px;
+    }
+
+    .navbar__logo {
+        height: 38px;
+    }
+
+    .navbar__social-btn {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+.HR_TAGE {
+    margin-top: 20px;
+    outline: none;
+    position: relative;
+    height: 2px;
+    background-color: rgb(16, 15, 11);
+}
