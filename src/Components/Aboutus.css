@@ -2,7 +2,6 @@
    AboutUs – TakeMyAssignment.co.uk
    Slide-from-left + fade-in on scroll entry
 ═══════════════════════════════════════════ */
-
 .au-section {
     position: relative;
     width: 100%;
@@ -15,11 +14,13 @@
 .au-bg {
     position: absolute;
     inset: 0;
-    background: linear-gradient(160deg,
-            #fff5f5 0%,
-            #ffe0e0 35%,
-            #ff6b6b 75%,
-            #e53935 100%);
+    background: linear-gradient(
+        160deg,
+        #fff5f5 0%,
+        #ffe0e0 35%,
+        #ff6b6b 75%,
+        #e53935 100%
+    );
     z-index: 0;
 }
 

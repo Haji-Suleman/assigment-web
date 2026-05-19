@@ -3,6 +3,8 @@ import Navbar from './Components/Navbar'
 import SecondNav from './Components/SecondNav'
 import HeroSection from "./Components/HeroSection"
 import AboutUs from './Components/Aboutus'
+import WhyChoose from './Components/WhyChoose'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 function App() {
 
 
@@ -12,6 +14,7 @@ function App() {
       <SecondNav />
       <HeroSection />
       <AboutUs />
+      <WhyChoose />
     </>
   )
 }

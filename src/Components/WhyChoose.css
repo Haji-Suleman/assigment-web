@@ -1,0 +1,146 @@
+/* ═══════════════════════════════════════
+   WhyChoose – takemyassignment.co.uk
+═══════════════════════════════════════ */
+
+.wc-section {
+    width: 100%;
+    background: #f9f9f9;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* ── Grid ── */
+.wc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 60px 70px;
+}
+
+/* ── Card ── */
+.wc-card {
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    padding: 30px 36px 40px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: default;
+}
+
+.wc-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.09);
+}
+
+/* ── Icon circle ── */
+.wc-icon-wrap {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2.5px solid #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.wc-icon-wrap i {
+    font-size: 36px;
+    color: #1a1a1a;
+}
+
+/* ── Title ── */
+.wc-card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+    line-height: 1.55;
+}
+
+/* ══════════════════════════════════════
+   ENTRY ANIMATIONS — smooth spring
+══════════════════════════════════════ */
+
+.wc-card--from-left {
+    opacity: 0;
+    transform: translateX(-110px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.wc-card--from-top {
+    opacity: 0;
+    transform: translateY(-110px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.wc-card--from-right {
+    opacity: 0;
+    transform: translateX(110px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.wc-card--from-bottom {
+    opacity: 0;
+    transform: translateY(110px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Landed */
+.wc-card--in {
+    opacity: 1 !important;
+    transform: translate(0, 0) !important;
+}
+
+/* Hover after landing */
+.wc-card--in:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.09) !important;
+}
+
+/* ── Bottom red banner ── */
+.wc-bottom-banner {
+    width: 100%;
+    background: #e53935;
+    padding: 36px 24px;
+    text-align: center;
+}
+
+.wc-banner-text {
+    font-size: clamp(16px, 2.4vw, 26px);
+    font-weight: 800;
+    font-style: italic;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .wc-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 40px 24px;
+    }
+}
+
+@media (max-width: 540px) {
+    .wc-grid {
+        grid-template-columns: 1fr;
+    }
+}
