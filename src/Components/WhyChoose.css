@@ -72,25 +72,25 @@
 
 .wc-card--from-left {
     opacity: 0;
-    transform: translateX(-110px);
+    transform: translateX(200px);
     transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 2s cubic-bezier(0.22, 1, 0.36, 1),
         box-shadow 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .wc-card--from-top {
     opacity: 0;
-    transform: translateY(-110px);
-    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform: translateY(-150px);
+    transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 2s cubic-bezier(0.22, 1, 0.36, 1),
         box-shadow 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .wc-card--from-right {
     opacity: 0;
-    transform: translateX(110px);
+    transform: translateX(-110px);
     transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 2s cubic-bezier(0.22, 1, 0.36, 1),
         box-shadow 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
@@ -98,7 +98,7 @@
     opacity: 0;
     transform: translateY(110px);
     transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 2s cubic-bezier(0.22, 1, 0.36, 1),
         box-shadow 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
