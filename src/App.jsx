@@ -8,6 +8,9 @@ import '@fortawesome/fontawesome-free/css/all.min.css'
 import Assurance from './Components/Assurance'
 import KeyQualities from './Components/KeyQualities'
 import FAQ from "./Components/FAQ"
+import ExceptUS from './Components/ExceptUS'
+import CountriesSection from './Components/WorkedOn'
+import Footer from './Components/Footer'
 function App() {
 
 
@@ -21,6 +24,9 @@ function App() {
       <Assurance />
       <KeyQualities />
       <FAQ />
+      <ExceptUS />
+      <CountriesSection />
+      <Footer />
     </>
   )
 }

@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+.footer-wrapper {
+    font-family: 'Nunito', sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+    background: #ffffff;
+}
+
+/* Main footer content */
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1.4fr 1.2fr;
+    gap: 2rem;
+    padding: 3rem 4rem;
+    align-items: start;
+    box-sizing: border-box;
+}
+
+/* Column 1 — Logo + about */
+.footer-brand .footer-logo {
+    height: 60px;
+    width: auto;
+    margin-bottom: 1rem;
+}
+
+.footer-brand p {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.75;
+    margin: 0;
+    font-weight: 400;
+}
+
+/* Column 2 — Quick Links */
+.footer-links h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 0 0 1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links ul li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #1a1a1a;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.footer-links ul li .link-icon {
+    font-size: 15px;
+    color: #555;
+}
+
+/* Column 3 — Address */
+.footer-address h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 0 0 1rem;
+}
+
+.footer-address p {
+    font-size: 14px;
+    color: #1a1a1a;
+    line-height: 1.9;
+    margin: 0;
+    font-weight: 600;
+}
+
+.footer-address p a {
+    color: #e53e3e;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Column 4 — Map + socials */
+.footer-map-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.footer-map {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.footer-map iframe {
+    width: 100%;
+    height: 160px;
+    border: none;
+    display: block;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.social-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.social-btn.facebook {
+    background: #1877f2;
+}
+
+.social-btn.instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+}
+
+.social-btn.whatsapp {
+    background: #25d366;
+}
+
+/* Bottom bar */
+.footer-bottom {
+    background: #e53e3e;
+    width: 100%;
+    padding: 1rem 2rem;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.footer-bottom p {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(12px, 1.8vw, 15px);
+    color: #ffffff;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Responsive — tablet */
+@media (max-width: 1024px) {
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+        padding: 2.5rem 2rem;
+        gap: 2rem;
+    }
+}
+
+/* Responsive — mobile */
+@media (max-width: 600px) {
+    .footer-main {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.2rem;
+        gap: 1.8rem;
+    }
+
+    .footer-map iframe {
+        height: 180px;
+    }
+
+    .footer-bottom {
+        padding: 0.9rem 1rem;
+    }
+}
