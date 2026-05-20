@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import "./AboutUs.css"
+import "./Aboutus.css"
 
 // ── Replace with your actual image ──
 import aboutImg from "../assets/10007.webp"

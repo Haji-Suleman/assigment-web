@@ -1,6 +1,8 @@
 import React from "react";
 import Logo from "../assets/10011.png"; // 👈 your logo
 import "./Footer.css";
+// Make sure Font Awesome is loaded in your index.html:
+// <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
 export default function Footer() {
     return (
@@ -26,7 +28,7 @@ export default function Footer() {
                     <ul>
                         {["How We Work", "Services", "Contact Us", "Reviews", "Blogs"].map((link) => (
                             <li key={link}>
-                                <span className="link-icon">🔒</span>
+                                <i className="fa fa-clipboard link-icon" aria-hidden="true"></i>
                                 {link}
                             </li>
                         ))}

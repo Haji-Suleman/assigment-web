@@ -21,7 +21,7 @@
 
 /* ── Left floating icon column ── */
 .hero__side-icons {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
