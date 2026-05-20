@@ -7,7 +7,7 @@ import WhyChoose from './Components/WhyChoose'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import Assurance from './Components/Assurance'
 import KeyQualities from './Components/KeyQualities'
-import Accordion from './Components/Accordion'
+import FAQ from "./Components/FAQ"
 function App() {
 
 
@@ -20,7 +20,7 @@ function App() {
       <WhyChoose />
       <Assurance />
       <KeyQualities />
-      <Accordion />
+      <FAQ />
     </>
   )
 }

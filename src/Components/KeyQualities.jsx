@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import './Accordion.css'
-
+import "./KeyQualities.css"
 const items = [
     {
         title: 'Healthy Development',
