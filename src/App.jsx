@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Navbar from './Components/Navbar'
 import SecondNav from './Components/SecondNav'
 import HeroSection from "./Components/HeroSection"
-import AboutUs from './Components/Aboutus'
+import Aboutus from './Components/Aboutus'
 import WhyChoose from './Components/WhyChoose'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import Assurance from './Components/Assurance'
@@ -16,7 +16,7 @@ function App() {
       <Navbar />
       <SecondNav />
       <HeroSection />
-      <AboutUs />
+      <Aboutus />
       <WhyChoose />
       <Assurance />
       <KeyQualities />
