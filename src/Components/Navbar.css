@@ -1,9 +1,5 @@
-/* ────────────────────────────────────────────
-   Navbar  –  TakeMyAssignment.co.uk
-   Layout: phone | logo | socials
-──────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
 
-/* Reset & base */
 *,
 *::before,
 *::after {
@@ -12,25 +8,17 @@
     padding: 0;
 }
 
-/* ── Shell ── */
-header {
-    margin-top: 5px;
-}
-
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     width: 100%;
-    height: 60px;
-    /* matches the screenshot height */
-    padding: 0 10px;
-
+    height: 64px;
+    padding: 0 24px;
     background: #ffffff;
-    border-bottom: 1px solid #e8e8e8;
-
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Nunito', sans-serif;
+    position: relative;
+    z-index: 100;
 }
 
 /* ── Phone button (left) ── */
@@ -38,32 +26,26 @@ header {
     display: flex;
     align-items: center;
     gap: 8px;
-
     background: #d32f2f;
-    /* red pill */
     color: #ffffff;
     text-decoration: none;
     font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 0.3px;
+    font-weight: 600;
     white-space: nowrap;
-
-    padding: 5px 18px;
+    padding: 7px 16px;
     border-radius: 4px;
-
-    transition: background 0.2s ease, transform 0.15s ease;
+    transition: background 0.2s ease;
+    z-index: 1;
 }
 
 .navbar__phone:hover {
     background: #b71c1c;
-    transform: translateY(-1px);
 }
 
 .navbar__phone-icon {
     width: 18px;
     height: 18px;
     filter: brightness(0) invert(1);
-    /* forces icon white */
     flex-shrink: 0;
 }
 
@@ -72,40 +54,37 @@ header {
     display: flex;
     align-items: center;
     text-decoration: none;
-
-    /* Push logo to true centre when socials width differs from phone width */
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .navbar__logo {
-    height: 48px;
+    height: 50px;
     width: auto;
     object-fit: contain;
 }
 
-/* ── Social icons (right) ── */
+/* ── Social icons (right) — desktop only ── */
 .navbar__socials {
     display: flex;
     align-items: center;
     gap: 8px;
+    z-index: 1;
 }
 
 .navbar__social-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    width: 30px;
-    height: 30px;
+    width: 34px;
+    height: 34px;
     border-radius: 6px;
-
     background: #d32f2f;
-    /* same red as phone button */
     text-decoration: none;
-
-    transition: background 0.2s ease, transform 0.15s ease;
+    color: #ffffff;
+    font-size: 16px;
+    transition: background 0.2s ease;
 }
 
 .navbar__social-btn:hover {
@@ -116,39 +95,156 @@ header {
     width: 18px;
     height: 18px;
     filter: brightness(0) invert(1);
-    /* forces icons white */
 }
 
-/* ── Responsive: shrink on small screens ── */
+/* ── Hamburger button — hidden on desktop ── */
+.navbar__hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 38px;
+    height: 38px;
+    background: #d32f2f;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 200;
+    padding: 0;
+}
+
+.navbar__hamburger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Animate to X when open */
+.navbar__hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.navbar__hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar__hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Mobile dropdown menu ── */
+.navbar__mobile-menu {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    border-top: 2px solid #d32f2f;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    z-index: 99;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.35s ease;
+}
+
+.navbar__mobile-menu.open {
+    display: flex;
+    max-height: 300px;
+}
+
+.navbar__mobile-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 24px;
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a1a;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.15s ease;
+}
+
+.navbar__mobile-menu a:last-child {
+    border-bottom: none;
+}
+
+.navbar__mobile-menu a:hover {
+    background: #fff5f5;
+    color: #d32f2f;
+}
+
+.navbar__mobile-menu a i {
+    font-size: 18px;
+    color: #d32f2f;
+    width: 22px;
+    text-align: center;
+}
+
+.navbar__mobile-menu a img.menu-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* ── HR divider ── */
+.HR_TAGE {
+    border: none;
+    height: 2px;
+    background-color: #0f0f0b;
+    margin: 0;
+}
+
+/* ── Desktop: show socials, hide hamburger ── */
+@media (min-width: 601px) {
+    .navbar__hamburger {
+        display: none;
+    }
+
+    .navbar__mobile-menu {
+        display: none !important;
+    }
+}
+
+/* ── Mobile (max 600px) ── */
 @media (max-width: 600px) {
     .navbar {
-        padding: 0 12px;
-        height: 56px;
+        padding: 0 14px;
+        height: 58px;
+    }
+
+    .navbar__socials {
+        display: none;
+    }
+
+    .navbar__hamburger {
+        display: flex;
+    }
+
+    .navbar__logo {
+        height: 40px;
     }
 
     .navbar__phone span {
         display: none;
-        /* show icon only on mobile */
     }
 
     .navbar__phone {
-        padding: 10px 12px;
+        padding: 8px 10px;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        justify-content: center;
     }
 
-    .navbar__logo {
-        height: 38px;
+    .navbar__mobile-menu {
+        top: 58px;
     }
-
-    .navbar__social-btn {
-        width: 32px;
-        height: 32px;
-    }
-}
-
-.HR_TAGE {
-    margin-top: 20px;
-    outline: none;
-    position: relative;
-    height: 2px;
-    background-color: rgb(16, 15, 11);
 }
